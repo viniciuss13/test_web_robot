@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.9.6 on win32)" generated="20210712 13:04:41.582" rpa="false" schemaversion="2">
+<suite id="s1" name="Web Test" source="C:\Users\Vinicius\Documents\projetos\PrimeExperts_junho_28_2021\desafio_web\web_test.robot">
+<kw name="Abrir o navegador" library="resource_web" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210712 13:04:41.886" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20210712 13:04:41.885" endtime="20210712 13:04:43.314"/>
+</kw>
+<status status="PASS" starttime="20210712 13:04:41.885" endtime="20210712 13:04:43.314"/>
+</kw>
+<test id="s1-t1" name="Caso de Teste 01: Pesquisar produto existente">
+<kw name="Acessar a página home do site Automation Practice" library="resource_web">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210712 13:04:43.318" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20210712 13:04:43.318" endtime="20210712 13:04:44.563"/>
+</kw>
+<status status="PASS" starttime="20210712 13:04:43.317" endtime="20210712 13:04:44.564"/>
+</kw>
+<kw name="Digitar o nome do produto &quot;Blouse&quot; no campo de pesquisa" library="resource_web" sourcename="Digitar o nome do produto &quot;${produto}&quot; no campo de pesquisa">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:search_query_top</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20210712 13:04:50.028" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-29.png"&gt;&lt;img src="selenium-screenshot-29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20210712 13:04:50.031" level="FAIL">Element 'id:search_query_top' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20210712 13:04:44.566" endtime="20210712 13:04:50.032"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:search_query_top</arg>
+<arg>${produto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20210712 13:04:50.032" endtime="20210712 13:04:50.032"/>
+</kw>
+<status status="FAIL" starttime="20210712 13:04:44.565" endtime="20210712 13:04:50.033"/>
+</kw>
+<kw name="Clicar no botão pesquisar" library="resource_web">
+<status status="NOT RUN" starttime="20210712 13:04:50.035" endtime="20210712 13:04:50.035"/>
+</kw>
+<kw name="Conferir se o produto &quot;Blouse&quot; foi listado no site" library="resource_web" sourcename="Conferir se o produto &quot;${produto}&quot; foi listado no site">
+<status status="NOT RUN" starttime="20210712 13:04:50.036" endtime="20210712 13:04:50.036"/>
+</kw>
+<status status="FAIL" starttime="20210712 13:04:43.315" endtime="20210712 13:04:50.037">Element 'id:search_query_top' not visible after 5 seconds.</status>
+</test>
+<test id="s1-t2" name="Caso de Teste 02: Pesquisar produto inexistente">
+<kw name="Acessar a página home do site Automation Practice" library="resource_web">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210712 13:04:50.051" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<msg timestamp="20210712 13:05:01.068" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=91.0.4472.124)
+</msg>
+<msg timestamp="20210712 13:05:01.077" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: unable to send message to renderer
+  (Session info: chrome=91.0.4472.124)
+</msg>
+<status status="FAIL" starttime="20210712 13:04:50.051" endtime="20210712 13:05:01.078"/>
+</kw>
+<status status="FAIL" starttime="20210712 13:04:50.050" endtime="20210712 13:05:01.078"/>
+</kw>
+<kw name="Digitar o nome do produto &quot;itemNãoExistente&quot; no campo de pesquisa" library="resource_web" sourcename="Digitar o nome do produto &quot;${produto}&quot; no campo de pesquisa">
+<status status="NOT RUN" starttime="20210712 13:05:01.079" endtime="20210712 13:05:01.079"/>
+</kw>
+<kw name="Clicar no botão pesquisar" library="resource_web">
+<status status="NOT RUN" starttime="20210712 13:05:01.079" endtime="20210712 13:05:01.080"/>
+</kw>
+<kw name="Conferir mensagem de erro &quot;${MENSAGEM_ALERTA}&quot;" library="resource_web" sourcename="Conferir Mensagem De Erro &quot;${MENSAGEM_ALERTA}&quot;">
+<status status="NOT RUN" starttime="20210712 13:05:01.080" endtime="20210712 13:05:01.080"/>
+</kw>
+<status status="FAIL" starttime="20210712 13:04:50.048" endtime="20210712 13:05:01.081">WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: unable to send message to renderer
+  (Session info: chrome=91.0.4472.124)
+</status>
+</test>
+<test id="s1-t3" name="Caso de Teste 03: Listar Produtos">
+<kw name="Acessar a página home do site Automation Practice" library="resource_web">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210712 13:05:01.090" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<msg timestamp="20210712 13:05:25.373" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=91.0.4472.124)
+</msg>
+<msg timestamp="20210712 13:05:25.378" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=91.0.4472.124)
+</msg>
+<status status="FAIL" starttime="20210712 13:05:01.089" endtime="20210712 13:05:25.378"/>
+</kw>
+<status status="FAIL" starttime="20210712 13:05:01.088" endtime="20210712 13:05:25.378"/>
+</kw>
+<kw name="Passar o mouse por cima da categoria &quot;Women&quot; no menu principal superior de categorias" library="resource_web" sourcename="Passar o mouse por cima da categoria &quot;${WOMEN}&quot; no menu principal superior de categorias">
+<status status="NOT RUN" starttime="20210712 13:05:25.380" endtime="20210712 13:05:25.380"/>
+</kw>
+<kw name="Clicar na sub categoria &quot;Summer Dresses&quot;" library="resource_web" sourcename="Clicar na sub categoria &quot;${SUMMER}&quot;">
+<status status="NOT RUN" starttime="20210712 13:05:25.381" endtime="20210712 13:05:25.381"/>
+</kw>
+<kw name="Conferir se os produtos da sub-categoria &quot;Summer Dresses&quot; foram mostrados na página" library="resource_web" sourcename="Conferir se os produtos da sub-categoria &quot;${SUMMER}&quot; foram mostrados na página">
+<status status="NOT RUN" starttime="20210712 13:05:25.382" endtime="20210712 13:05:25.382"/>
+</kw>
+<status status="FAIL" starttime="20210712 13:05:01.086" endtime="20210712 13:05:25.383">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=91.0.4472.124)
+</status>
+</test>
+<test id="s1-t4" name="Caso de Teste 04: Adicionar Cliente">
+<kw name="Acessar a página home do site Automation Practice" library="resource_web">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210712 13:05:25.391" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<msg timestamp="20210712 13:05:49.648" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=91.0.4472.124)
+</msg>
+<msg timestamp="20210712 13:05:49.652" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=91.0.4472.124)
+</msg>
+<status status="FAIL" starttime="20210712 13:05:25.390" endtime="20210712 13:05:49.653"/>
+</kw>
+<status status="FAIL" starttime="20210712 13:05:25.389" endtime="20210712 13:05:49.653"/>
+</kw>
+<kw name="Clicar em &quot;Sign in&quot;" library="resource_web">
+<status status="NOT RUN" starttime="20210712 13:05:49.654" endtime="20210712 13:05:49.654"/>
+</kw>
+<kw name="Informar um e-mail válido" library="resource_web">
+<status status="NOT RUN" starttime="20210712 13:05:49.655" endtime="20210712 13:05:49.655"/>
+</kw>
+<kw name="Clicar em &quot;Create an account&quot;" library="resource_web">
+<status status="NOT RUN" starttime="20210712 13:05:49.656" endtime="20210712 13:05:49.656"/>
+</kw>
+<kw name="Preencher os dados obrigatórios" library="resource_web">
+<status status="NOT RUN" starttime="20210712 13:05:49.657" endtime="20210712 13:05:49.657"/>
+</kw>
+<kw name="Submeter cadastro" library="resource_web">
+<status status="NOT RUN" starttime="20210712 13:05:49.658" endtime="20210712 13:05:49.658"/>
+</kw>
+<kw name="Conferir se o cadastro foi efetuado com sucesso" library="resource_web">
+<status status="NOT RUN" starttime="20210712 13:05:49.659" endtime="20210712 13:05:49.659"/>
+</kw>
+<status status="FAIL" starttime="20210712 13:05:25.386" endtime="20210712 13:05:49.660">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=91.0.4472.124)
+</status>
+</test>
+<kw name="Fechar o navegador" library="resource_web" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210712 13:05:49.666" endtime="20210712 13:05:51.744"/>
+</kw>
+<status status="PASS" starttime="20210712 13:05:49.665" endtime="20210712 13:05:51.745"/>
+</kw>
+<doc>teste case web</doc>
+<status status="FAIL" starttime="20210712 13:04:41.585" endtime="20210712 13:05:51.745"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="4" skip="0" id="s1" name="Web Test">Web Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210712 13:05:01.068" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=91.0.4472.124)
+</msg>
+<msg timestamp="20210712 13:05:25.373" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=91.0.4472.124)
+</msg>
+<msg timestamp="20210712 13:05:49.648" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: chrome not reachable
+  (Session info: chrome=91.0.4472.124)
+</msg>
+</errors>
+</robot>

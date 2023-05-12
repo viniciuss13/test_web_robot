@@ -1,7 +1,7 @@
 *** Settings ***
 Library     SeleniumLibrary
 Library     String
-Resource    ../test_01_bdd_procedural\amazon_resources.robot
+Resource    ../test_01_bdd_procedural_amazon\amazon_resources.robot
 
 
 *** Variables ***
